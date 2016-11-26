@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <listener>
+        <listener-class>kz.kaznitu.lessons.listener.MyListener</listener-class>
+    </listener>
+    <filter>
+        <filter-name>MyFilter</filter-name>
+        <filter-class>kz.kaznitu.lessons.filter.MyFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>MyFilter</filter-name>
+        <servlet-name>first</servlet-name>
+    </filter-mapping>
+    <servlet>
+        <servlet-name>first</servlet-name>
+        <servlet-class>kz.kaznitu.lessons.servlet.first</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>counter</servlet-name> 
+        <servlet-class>kz.kaznitu.lessons.servlet.Counter</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>counter</servlet-name>
+        <url-pattern>/counter</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>first</servlet-name>
+        <url-pattern>/first</url-pattern>
+    </servlet-mapping>
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+</web-app>
